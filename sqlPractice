@@ -1,0 +1,30 @@
+//Practice sheet 1
+SELECT LENGTH(CustomerName) AS LengthOfName FROM Customers;
+SELECT DISTINCT substring_index(email, '.', -1) FROM `customer`
+SELECT DISTINCT customer_id FROM `booking` WHERE total_days >= 3
+SELECT joining_date FROM Users ORDER BY joining_date ASC;
+SELECT name,MAX(followers) FROM Users WHERE joining_date >'2020-05-18';
+SELECT name,MAX(multiplier) FROM Users WHERE followers < '7000';
+SELECT DISTINCT multiplier FROM Users WHERE followers <'900000';
+SELECT AVG(followers) FROM Users WHERE joining_date < '2020-06-11';
+SELECT member_id,name,email,multiplier FROM Users WHERE followers BETWEEN 700000 AND 990000 AND joining_date > '2021-05-18';
+SELECT member_id,name ,email,followers FROM Users WHERE name = 'u,o,v,n,s,m';
+
+//Practice sheet 2
+SELECT DISTINCT multiplier FROM Users ORDER BY multiplier DESC;
+SELECT DISTINCT joining_date FROM Users ORDER BY joining_date ASC;
+SELECT member_id,email, FROM Users WHERE email LIKE '%com';
+SELECT name,email FROM Users ORDER BY joining_date DESC LIMIT 5;
+SELECT COUNT(*) FROM Users;
+SELECT DISTINCT multiplier FROM Users WHERE joining_date>'2020-04-30';
+SELECT AVG(LENGTH(name)) FROM Users;
+SELECT COUNT(DISTINCT SUBSTRING_INDEX(email,'.',-1)) FROM Users;
+SELECT * FROM Users ORDER BY joining_date ASC;
+SELECT name,MAX(followers) FROM Users WHERE joining_date>='2020-06-01';
+SELECT name,MAX(multiplier) FROM Users WHERE followers < '7000';
+SELECT DISTINCT multiplier FROM Users WHERE followers <'900000';
+SELECT AVG(followers) FROM Users WHERE joining_date < '2020-06-11';
+SELECT member_id,name,email,multiplier FROM Users WHERE followers BETWEEN 700000 AND 990000 AND joining_date > '2021-05-18';
+SELECT member_id,name ,email,followers FROM Users WHERE name LIKE '%u%' OR name LIKE '%o%' OR name LIKE '%v%' OR name LIKE '%n%' OR name LIKE '%s%' OR name LIKE '%m%';
+SELECT total_days, COUNT(customer_id) FROM booking WHERE start_date>'2020-04-30' GROUP BY total_days
+SELECT starts_from, total_days FROM `booking` WHERE start_date > '2020-05-30' ORDER BY total_days DESC LIMIT 1
